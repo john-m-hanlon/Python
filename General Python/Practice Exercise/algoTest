@@ -1,0 +1,13 @@
+import matplotlib
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+import matplotlib.dates as mdates
+from matplotlib.dates import bytespdate2num
+import numpy as np
+import time
+
+totalStart = time.time()
+	
+date,open1,high,low,close,volume = np.loadtxt('DIS.txt', unpack=True, delimiter=',',converters={0: bytespdate2num('%Y%m%d%H%M%S')})
+
+print(date)

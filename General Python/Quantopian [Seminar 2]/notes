@@ -1,0 +1,110 @@
+- long and short for market neutrality, with a ranking scheme for assets i.e. pricing model
+
+- returns are returns from top, long from bottom, short, make money on differentiation from the two
+- want net effect to be postiive, targetted bets
+
+- how to account for security prices, i.e. $100 for 1,000 assets w. 100k of capital
+- security cost $40, can do $100, either 80 or 120, need to increase capital or decrease scope of assets
+
+- returns dependent on spread of returns, how predictive spread value is
+- market neutral product offered to inst. w/. billions, not often to retail
+- need to optiize quality of ranking scheme, how to rank these securities, good pricing model will produce a solid spread
+- if you have a strong pricing model, want many positions (diversify), capital constraints will be the big issue, want to reblance on a daily basis, not predicitve overnight, time horizon is a factor, open/close, thats why first and last 30 min so important
+- need to buy and sell ~50 of portfolio, ~10k in transaction fees a month to rebalance each day 
+- slippage, lot of capital through small qty. of low vol assets
+- quants like higher capacity strategieis, 
+
+- need to research ranking schemes, special sauce, different ranking schemes work in different markets
+- factor weigthed signal
+- good strat as many different ranking schemes, weight each based on alpha schemes
+- deustche ada boost, signal boosting, look at white paper
+- boost weight of something that has good recent results
+- signal boosting, experting weighting, ada boost
+- which are effective predictors
+- nate silver, five thirty eight, book
+
+
+- Arbitrage Pricing Theory
+- CAPM precursor to Arb pric theory
+- signal decomposiion
+- Factors could be return on tech stocks, gold, market(S&P), is there any return after we put in all these well known factors
+- could just be a 2x bet on the S&P
+- just need a return stream for the factors 
+- risk adj returns, each factor has some risk associated with it, yield cannot outpace risk in an efficient market
+- arb ops show when risks are too low or too high, need to buy or sell to force it back to wehre it should be and the difference is the profit
+
+- (a) economists assume infitie computations and information
+- (b) limitied info and computing power
+- nash equil disproved due to (b)
+- econ theory is shifting, moving toward factor modelling 
+- computation econ, simulation equilibirum
+- geo-networking
+- 
+
+Pipeline tutorial will help with ability to develop ranking scheme
+- 
+
+
+Fundamental factor models can show exposure/risk to certain items, i.e. small cap stocks
+- a factor would be 'small cap stocks'
+
+- pulling company filings, fundamental data
+- essentially an arbitrage opportunity (i.e. dcf as well)
+- how are different market conditions affecting different groupings, i.e. large cap v small cap, high growth low growth, want the returns for these companies
+- dont want bug in data, getting data from incorrect window
+- 
+
+
+Backtests built to model....:
+
+- comissions, transactions costs, backtesting enginges can model out how much you pay per trade as you make trades
+- slippage, never get the price you see on a market b/c of slippage, backtests in quantopian incorporate slippage models
+- liquidity, models out buyiing and selling, not a concern for small volume retail, but large institutional could be a problem, will have historical liquidity modelled in
+
+
+- do risk exposures analysis, use alphalens, if they have factors that look, low turnover re: transaction costs, etc then put factors in the backtest, little time in the algorithm
+- update models to minimize market impact - efx?
+- run 10 backtests across differet levels of transaction costs, slippage, liquidity...
+	- diff capital and rebalancing frequencies
+	- how does it survive real market concerns
+	- can my idea survive these real market conditions, not how we develop these ideas
+	- 
+
+
+how companies file, how is that data put together
+10k, 10q
+Nat lang proc to see how ppl think or write how much risk or stress on how they write
+- what about verbiage of 10k, predictive works, and amount of time beteen the words, how is it actually said
+- andrew ang, factor modelling, factor investing
+
+- risk adj. returns
+
+Workflow Checklist for Factor Modeling
+
+Come up with hypothesis for whether a factor might be predictive of
+returns. Obtain and clean data for that factor. Run single-factor
+analysis using alphalens and determine whether it’s a viable factor.
+
+Once viability has been determined, check if factor is correlated
+with a list of known factors and factors already present in your
+model. If your new factor can be completely described as a weighted
+sum of existing factors, then it’s not that interesting. If your
+factor has new information, then add it to your set of existing
+factors.
+
+Develop a model for weighting each factor in your final
+ranking scheme. Weightings could be equal, volatility weighted, or
+based on something more sophisticated like a adaboost or other signal
+boosting/expert weighting algorithms.
+
+Put your new and improved multi-factor model in an algorithm along with the weighting scheme if it’s more than a fixed or equal weighting.
+
+Use 'portfolio construction techniques' to ensure that the trades produced by your multi-factor ranking scheme do not contain excess risk. Things to consider include: CVaR, sector exposure, risk factor exposure. Generally you will want to create a list of longs and shorts based on your multi-factor ranking scheme, and then set the weights based on portfolio optimization techniques as described above to ensure you don’t have excess exposure to any given factor.
+
+Put the algorithm up to trade on paper for a little while. A higher frequency rebalancing algorithm will need less time to accumulate the same confidence in future performance as an algorithm that rarely trades. On the other hand, be careful not to paper trade it until the alpha you originally found is old news and exhausted.
+
+Do constant risk monitoring of the algorithm to determine if alpha is decaying or risk exposures and returns are outside of forecasted limits, pyfolio tear sheet analysis 
+
+Put algorithm to trade live.
+
+Continue risk monitoring.

@@ -1,0 +1,112 @@
+11:00am - 11:30am
+Brunch
+
+11:30am - 12:00pm
+Introduction to Algorithmic Trading
+- leverage lessons: https://www.quantopian.com/learn
+- algor = defined set of rules
+- i.e. 50% allo to equities (S&P500) 10& (bond index), when DAX > .5, close move to cash
+- used for risk management, when something triggers a touch point move everything to cash
+- rebalance once a month
+- can issue buy/sell orders at any point thoughtout 24 hrs, would be able to make orders overnight, i.e.
+- reduce risk
+- human traders w cog bias, small universe of securities
+- look up israeli court, statistically more sig case of acquital after lunch, 12p, more likely later in day..analogy is human trader working at 2p v 4p
+- algo helps to include biases into the rules, but can mitigate the human element
+- backteseting: runnning algo through historial performance, to see how it might have performed
+- quantopian updates data on a minute basis, i.e. won't reflect 12:01:05
+- backtesting allows you test historical scenarios
+
+	- include these time frames for indexing performance
+	- scenario analysis (down markets, up markets)
+- survival bias, how can you before that it isn't random luck that somebody performanced well
+
+- need to use as many tools as possible to be able to validate algo
+- need to include delisted companies in screener, source of bias
+- correction bias, needs to know when data has been corrected, i.e. datasets will release only corrected data, so if there is a data error, i.e. apple = 1,000.00/shs and you sell, they release correction of aapl = 100.00/shs, you may lose money due to correction and cost basis, need to understand there is inherent bias with datasets
+
+- backtest in the 90s, is not indicative of how trading occurs today
+
+- quantopian currently only has us equities 930a-4p
+- futures next, need to add Fixed Income as well as mkt open & mkt close
+
+
+12:00pm - 12:30pm
+Overview of Quantopian Platform
+- Forums have a huge amount of survival bias on trading forums
+
+
+
+12:30pm - 1:00pm
+Introduction to the Research Environment
+
+- need to normally distribute data, bad practice, tough to trust statistics when underlying data is not normalized
+- pretty much nothing is normally distributed
+
+
+1:00pm - 1:30pm
+Lecture: Pairs Trading Strategy
+- take something and change a little piece, tweak it a bit and see what changes, work with the data and ask why it may or may not work
+- okay to randomized data from a normalized dataset for learning purposes, but might not be indicative of real life scenarios
+- pvalues should be binary, either stat sig or not stat sig
+- mean reversion, if the correlation betweenn the two is especially large then they are going to move together, short the higher, long the lower
+- if the two are closer together the long the first and short the second, as long as the difference moves closer or farther apart should make a profit on the long short strategy \
+- if they diverge then you lose money
+- use math to gain an understanding of how a system works then make a targets bet
+- minimize risk of other tagalong bets associated with the order & execution 
+- long in one, short in the other // need to do a regression to understand how to weight, a linear regresssion on the time series
+- need to copute the 'hedge ratio'
+- pairs trading is just price history
+- top quants now include fundamentals in their algorithms
+
+- mutliple comparissons bias, if you run a bunch of pvalue tests, just give a probabily, confidence, not perfect
+- what is the prob that if there no relationship in your data that youg et a pvalue below 5%? 5%
+- need a second stage validation if you are doing a cross-sectional analysis
+
+- come up with candidates with things that should be cointegrated, which make economic sense, instruments that should track each other, a future and an underlying equity
+
+- paris trading takes advantage of when these things do not track each other
+- do regression  / correlation analysis
+
+- confounding variable bias, looks like relationship between A and B, but it is really C that causes them to move, happens with cointegrated, the market or sector may just push them around, probably want to include a sector index to see if it was a confounding variable...could make var non-market neutral
+
+- use to convince you are wrong
+- use numbers and statistical tests confirm theories
+
+- danger case, convince yourself you're right when you're wrong, make a bet
+- base case
+- safe, dont make a bet
+
+- look ahead bias
+
+- use z-score, may allow you to decide when to go long/short in pair trading strategy
+- need to do analysis on predictive power,
+
+- be aware of where cointegration comes, need to know if it is the market which is driving in reality...i.e: stark increase in DJI or SP500, may 
+
+
+
+
+
+
+1:30pm - 2:00pm
+Exercise: Find Your Own Pairs
+
+2:00pm - 2:30pm
+Exercise: Backtesting
+- backtesting is a simulation of a state of the world
+- incorporate rebalancing
+-- come up with hypothesis of how the world works
+-- use statisicall analysis to verify hypothesis
+-- put in a backtest to show how it actually works in real life
+
+
+
+2:30pm - 3:00pm
+Lecture: Overfitting
+
+3:30pm - 5:30pm
+Exercise: Design Your Own Strategy
+
+5:30pm - 6:00pm
+Wrap-Up

@@ -1,0 +1,329 @@
+Comparable Companies Variables
+
+Multiples Analysis
+Company Name : Ticker : % of 52-week high : Market Cap : TEV : Cash : Debt : TEV / Revenue : Price / Earnings :
+																		   : LTM : FYE+1   : LTM : FYE+1      :
+
+Mean
+Median
+High
+Low
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Margins Analysis
+
+Company Name : Revenue Growth  : EBITDA Growth   : EPS Growth      : CAPEX % of Rev : EBIT Margin : EBITDA Margin : Net Margin  :
+			 : FYElst : FYECur : FYElst : FYECur : FYElst : FYECur : LTM            : LTM : FYE+1 : LTM : FYE+1   : LTM : FYE+1 : 
+
+Mean
+Median
+High
+Low
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Spread Variables
+
+Stock Price as of mkt close (Assumed Valuation Date)
+
+52 Wk High
+52 Wk Low
+% Off High
+
+Enterprise Value
+Equity Value
+
+EV / 2012A Sales
+EV / LTM Sales
+EV / 2013E Sales
+EV / 2014E Sales
+
+EV / 2012A EBITDA ex non-recurring items
+EV / LTM EBITDA ex non-recurring items
+EV / 2013E EBITDA
+EV / 2014E EBITDA
+
+EV / 2012A EBIT ex non-recurring items
+EV / LTM EBIT ex non-recurring items
+EV / 2013E EBIT
+EV / 2014E EBIT
+
+2012A Gross Margin
+LTM Gross Margin
+
+2012A EBITDA Margin
+LTM EBITDA Margin
+2013E EBITDA Margin
+2014E EBITDA Margin
+
+2012A EBIT Margin
+LTM EBIT Margin
+2013E EBIT Margin
+2014E EBIT Margin
+
+
+
+
+
+Data from most recent SEC filing
+Basic Shares Outstanding
+Cash and Cash Equivalents
+Total Debt on Balance Sheet
+Less: Convertible Debt figured in FD Shares
+Preferred Equity
+Less: Preferred Equity figured into FD Shares
+Minority (non-controlling) Interest
+Net Debt
+
+Current Debt
+Total Current Liabilities
+Total Current Assets
+Net Working Capital
+Shareholders' Equity
+Total Assets
+
+Diluted Shares Outstanding
+
+Equity Value
+Net Debt
+Enterprise Value
+
+
+YTD from 10-Q Current
+Net Sales
+Cost of Goods Sold
+Gross Profit
+SG&A
+EBIT (reported)
+Non-recurring oper. expenses (gains)
+EBIT ex non-recurring items
+D&A
+EBITDA ex non-recurring items
+Net Income (Continuing Operations)
+Non-recurring non-oper. expenses (gains)
+Normalized earnings
+Capital Expenditures (CapEx)
+
+YTD from 10-Q Prior Year
+Net Sales
+Cost of Goods Sold
+Gross Profit
+SG&A/Operating Expenses
+EBIT (reported)
+Non-recurring oper. expenses (gains)
+EBIT ex non-recurring items
+D&A
+EBITDA ex non-recurring items
+Net Income (Continuing Operations)
+Non-recurring non-oper. expenses (gains)
+Normalized earnings
+Capital Expenditures (CapEx)
+
+Latest 10-K 
+Net Sales
+Cost of Goods Sold
+Gross Profit
+SG&A/Operating Expenses
+EBIT (reported)
+Non-recurring oper. expenses (gains)
+EBIT ex non-recurring items
+D&A
+EBITDA ex non-recurring items
+Net Income (Continuing Operations)
+Non-recurring non-oper. expenses (gains)
+Normalized earnings
+Capital Expenditures (CapEx)
+
+10-K Prior Year
+Net Sales
+Cost of Goods Sold
+Gross Profit
+SG&A/Operating Expenses
+EBIT (reported)
+Non-recurring oper. expenses (gains)
+EBIT ex non-recurring items
+D&A
+EBITDA ex non-recurring items
+Net Income (Continuing Operations)
+Non-recurring non-oper. expenses (gains)
+Normalized earnings
+Capital Expenditures (CapEx)
+
+
+LTM
+Net Sales
+Cost of Goods Sold
+Gross Profit
+SG&A/Operating Expenses
+EBIT (reported)
+Non-recurring oper. expenses (gains)
+EBIT ex non-recurring items
+D&A
+EBITDA ex non-recurring items
+Net Income (Continuing Operations)
+Non-recurring non-oper. expenses (gains)
+Normalized earnings
+CapEx
+
+
+Sell-side research projections
+Date of research report
+2013E
+Sales
+EBIT
+EBITDA
+EPS
+CapEx
+
+2014E
+Sales
+EBIT
+EBITDA
+EPS
+CapEx
+
+
+
+Convertible Debt
+Amount Outstanding
+Conversion Price
+Number of Shares 
+Amount of Debt to Subtract from Net Debt
+Amount of Shares to add to FD Shares
+
+Preferred Equity -  Convertible
+Amount Outstanding
+Conversion Price
+Number of  Common Shares 
+Amount of Debt to Subtract from Net Debt
+Amount of Shares to add to FD Shares
+
+Number of Options Exercisable
+A
+B
+C
+D
+E
+F
+G
+H
+I
+Weighted Average Strike Price
+A
+B
+C
+D
+E
+F
+G
+H
+I
+Calculation
+A
+B
+C
+D
+E
+F
+G
+H
+I
+Sum
+
+EPS 5 Yr Growth
+
+FX Country
+USD / FX
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Compare calculated values v provided
+Create toggle for add-backs i.e. (Should any addbacks be y/n, if y then show a list of the potential fields, then allow the user to add specified value with a comment of where it was found, there will be a comment section on the back where this will be put, only if the addbacks are present, the addback value with be a variable incorporated into the normalized value, so when it is n = 0, when it is y = rawData)
+
+create toggle for gordon growth v terminal multiple
+
+create toggle for calculated v called data fields i.e. free cash flow
+
+look into creating a SQL server database to allow for pulling data easier without ruining daily call limits
+
+might not be a bad idea to use this to create a blog, show positions taken, publish feedback, get feedback, won't ruin anything, not really hiding anything compared to inst. guys
+
+need to ensure authenticity of data
+
+could be 1200-2400 a year for basic fundamental data, cogs
+
+
+
+Questions for quandl/database:
+
+	⁃	what is the most DL database
+	⁃	What is the largest data base of securities
+	⁃	How many metrics does each contain
+	⁃	Are these uniform throughout 
+	⁃	How often it updated 
+	⁃	Where do you get your estimates from
+	⁃	How many calls/day
+	⁃	Is each metric a unique call count
+	⁃	Is there a trial version of your dataset
+	⁃	Why your dataset v competitor
+	⁃	Do you charge monthly v quarterly
+	⁃	Do all levels of subscription receive equal service / support?
+	⁃	Do you house economic data as well, just securities?
+	⁃	Equity & ficc?
+	⁃	Do you provide realtime or historical prices / data?
+
+Questions for screener strat:
+	⁃	follow sentdex tutorial, wil have high growth companies
+	⁃	Mess with metrics and cut offs to screen for stable high growth (look for acronym)
+	⁃	Need screener to sent: name, ticker, current price, market cap, P/E ratio, industry
+	⁃	Need an index of each ticker, and their industry to create index
+	⁃	Need to find a way to curate tailored peer group, need to see if this data is provided or needs to be manipulated
+	⁃	Need to save this data to a txt file so that the trading model and pull from it....need to run screener, populate txt files, valuation model will pull from this txt to say where each security is valued relative to current share price, will produce txt with ticker, industry, name, current price, Val price, tev, Val tev, in addition to Val screener is the actual Val charting, this will show comps, TA indicators, visually represent the security, 
+	⁃	Trading algo will use the valuation metrics in terms of when to close positions, will use 3 indicators, Sma, macd, rsi, to determine entry and exit points 
+	⁃	Trading algo needed to be more sophisticated, work on developing this
+
+	⁃	Moving forward incorporate: 
+	⁃	volatility, sp for benchmark, probability for rate hikes, djia
+
+
+Questions for valuation strat:
+	⁃	correlation between us GDP, global GDP, industry GDP, industry index, and revenue? How do we get a stable rev growth rate?
+	⁃	Need table of metrics to show change yoy, will show extra-ordinary initiatives / projects i.e. Capex -- this will help us get line items as a % of rev and get us to ufcf 
+	⁃	Now determine wacc:
+	⁃	Need peer group, cap structure, betas, sp data, 10yr tbill 
+	⁃	Need to define peer group
+	⁃	Need assumed valuation date w 10-k/q report data
+	⁃	Define terminal value, need peer group comps to get ebitda multiple
+	⁃	Gordon growth, need to do 2-5% (figure out a method for this toggle)
+	⁃	Discount ufcf back to present, add to terminal value
+	⁃	Divide by shs outstanding to get share price and compare against current price -- integrate this into the trading model, will set a ceiling or floor --
+	⁃	
+	⁃	
+	⁃	
+
+
+To do:
+List all the variables and create checklist
+Will need to attack each one by one and have an excel sheet tracking this progress
+Develop a test script for scenarios
+Develop HLD, review baml hlds
+Write sla, see if this is covered by quandl database
+Create workflows to show how data is transitioned throughout the application and where it is pulled from
+**Read II, finish dma**
+Look into Ib and Rh -- can I do either @baml or need to move?
+Leverage quantopian back testing (maybe)
+
+Three indicators def simplistic, but need to create some kind of backtesting model to feasbility of the project
+- use the screener to source a list of potential companies
+- do some analysis to see which are in a target range
+- use TA chart to show if possible to get returns, and if so, how much
+- need a backtest to say if we had 50k, can we make money, no invesetment over 10k, lets say 50k across 5 diversified equities
+- bring FICC into it later
+- just want to see how it plays out, dont necessarily trust quantopian's backtest, can calculate on our own
+
+- we can do this in excel to expedite the process, need yahoo intraday data to say if we trade during the day
+- need different columns that say all three agree, long at current price, x = trade cost, once one goes against, close at the current price, x = trade cost....final - initial - x = gains(loss)...aggregate this data, 
+
+
+
