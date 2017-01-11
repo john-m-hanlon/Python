@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 from matplotlib import style
 style.use('ggplot')
 
-sampleSize = 1000
+sampleSize = 100
 startingFunds = 10000
 wagerSize = 100
-wagerCount = 10000
+wagerCount = 1000
 
 
 def roll_dice():
@@ -32,7 +32,7 @@ def roll_dice():
         return True
 
 
-def double_bettor(funds, initial_wager, wager_count, color):
+def doubler_bettor(funds, initial_wager, wager_count, color):
     '''
     Takes three arguments and returns
 
@@ -53,9 +53,11 @@ def double_bettor(funds, initial_wager, wager_count, color):
     =======
 
     '''
+    global doubler_busts
+    global doubler_profits
     value = funds
     wager = initial_wager
-    global broke_count
+
     wX = []
     vY = []
 
@@ -75,9 +77,9 @@ def double_bettor(funds, initial_wager, wager_count, color):
                 previousWagerAmount = wager
                 wX.append(currentWager)
                 vY.append(value)
-                if value <= 0:
-                    broke_count += 1
-                    break
+                if value < 0:
+                    currentWager += 1000000000000
+                    doubler_busts += 1
 
         elif previousWager == 'loss':
             if roll_dice():
@@ -102,19 +104,17 @@ def double_bettor(funds, initial_wager, wager_count, color):
                 vY.append(value)
 
                 if value <= 0:
-                    broke_count += 1
-                    break
+                    currentWager += 1000000000000
+                    doubler_busts += 1
 
                 previousWager = 'loss'
-
-                if value < 0:
-                    broke_count += 1
-                    break
 
         currentWager += 1
     # print(value)
 
     plt.plot(wX, vY, color)
+    if value > funds:
+        doubler_profits += 1
 
 
 def simple_bettor(funds, initial_wager, wager_count, color):
@@ -138,7 +138,8 @@ def simple_bettor(funds, initial_wager, wager_count, color):
     =======
 
     '''
-    global broke_count
+    global simple_busts
+    global simple_profits
     value = funds
     wager = initial_wager
 
@@ -148,7 +149,7 @@ def simple_bettor(funds, initial_wager, wager_count, color):
     currentWager = 1
 
     while currentWager <= wager_count:
-        if roll_dice(): 
+        if roll_dice():
             value += wager
             wX.append(currentWager)
             vY.append(value)
@@ -158,23 +159,40 @@ def simple_bettor(funds, initial_wager, wager_count, color):
             wX.append(currentWager)
             vY.append(value)
 
+            if value <= 0:
+                currentWager += 100000000000000
+                simple_busts += 1
+
         currentWager += 1
 
-    if value <= 0:
-        value = 'broke'
-    # print('Funds: {}'.format(value))
-
     plt.plot(wX, vY, color)
+    if value > funds:
+        simple_profits += 1
 
 
-xx = 0
-broke_count = 0
-while xx < sampleSize:
+x = 0
+
+simple_busts = 0.0
+doubler_busts = 0.0
+simple_profits = 0.0
+doubler_profits = 0.0
+
+while x < sampleSize:
     simple_bettor(startingFunds, wagerSize, wagerCount, 'k')
-    double_bettor(startingFunds, wagerSize, wagerCount, 'c')
-    xx += 1
+    doubler_bettor(startingFunds, wagerSize, wagerCount, 'c')
+    x += 1
 
+print('Simple Bettor Bust Chance: {}'.format((simple_busts / sampleSize) *
+                                             100.00))
+
+print('Doubler Bettor Bust Chance: {}'.format((doubler_busts / sampleSize) *
+                                              100.00))
+print('Simple Bettor Profit Chance: {}'.format((simple_profits / sampleSize) *
+                                               100.00))
+print('Doubler Bettor Profit Chance: {}'.format((doubler_profits /
+                                                 sampleSize) * 100.00))
+
+plt.axhline(0, color='r')
 plt.ylabel('Account Value')
 plt.xlabel('Wager Count')
-plt.axhline(0, color='r')
 plt.show()
