@@ -259,7 +259,7 @@ while True:
     multiple_busts = 0.0
     multiple_profits = 0.0
 
-    multiple_samp_size = 10000
+    multiple_samp_size = 1000
     currentSample = 1
 
     random_multiple = random.uniform(0.1, 10.0)
