@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Applications/Spyder.app/Contents/Resources/lib/python3.5/spyder/app/mainwindow.py", line 2998, in main
+  File "/Applications/Spyder.app/Contents/Resources/lib/python3.5/spyder/app/mainwindow.py", line 2902, in run_spyder
+  File "/Applications/Spyder.app/Contents/Resources/lib/python3.5/spyder/app/mainwindow.py", line 793, in setup
+  File "/Applications/Spyder.app/Contents/Resources/lib/python3.5/spyder/plugins/help.py", line 33, in <module>
+  File "/Applications/Spyder.app/Contents/Resources/lib/python3.5/spyder/utils/help/sphinxify.py", line 32, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/sphinx/application.py", line 32, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/sphinx/config.py", line 22, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/sphinx/util/i18n.py", line 20, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/babel/dates.py", line 29, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/babel/util.py", line 19, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/babel/localtime/__init__.py", line 74, in <module>
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/babel/localtime/__init__.py", line 70, in get_localzone
+  File "/Users/JohnHanlon/anaconda/lib/python3.5/site-packages/babel/localtime/_unix.py", line 73, in _get_localzone
+TypeError: cannot use a string pattern on a bytes-like object

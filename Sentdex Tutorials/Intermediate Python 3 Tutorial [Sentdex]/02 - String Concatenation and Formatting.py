@@ -1,12 +1,21 @@
+""" This file contains code for use with "Intermediate Python Programming" by
+Sentdex, available from https://www.youtube.com/user/sentdex/
+
+Transcribed by: John Hanlon
+Twitter: @hanlon_johnm
+LinkedIn: http://bit.ly/2fcxlEw
+Github: bit.ly/2fSDp4J
+"""
+
 names = ['Jeff', 'Gary', 'Jill', 'Samantha']
 
 for name in names:
     print(' '.join(['Hello there,', name]))
 
-'''
-Print the list of names as a string, join is prefereable when concat more
+''' Print the list of names as a string, join is prefereable when concat more
 than two strings
 '''
+
 print(', '.join(names))
 
 import os
