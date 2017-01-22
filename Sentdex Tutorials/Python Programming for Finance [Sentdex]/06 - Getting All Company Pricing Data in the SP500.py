@@ -28,6 +28,7 @@ def save_sp500_tickers():
 
     Parameters
     ==========
+    Takes no arguments
 
     Returns
     =======

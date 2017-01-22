@@ -10,7 +10,7 @@ Github: bit.ly/2fSDp4J
 for i in range(5):
     print(i)
 
-# list comprehension, does store into memory (RAM)
+# list comprehension [], does store into memory (RAM)
 xyz = [i for i in range(5)]
 print(xyz)
 
@@ -20,5 +20,5 @@ for i in range(5):
 print(xyz)
 
 # now a generator with the (), does not store into memory (RAM)
-xyz = (i for i in range(5)) 
+xyz = (i for i in range(5))
 print(xyz)
