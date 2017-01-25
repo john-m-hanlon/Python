@@ -34,7 +34,7 @@ def save_sp500_tickers():
     tickers = []
     for row in table.findAll('tr')[1:]:
         ticker = row.findAll('td')[0].text
-        tickers.append(ticker)
+        tickers.append(tickers)
 
     with open('{}sp500tickers.pickle'.format(floc), 'wb') as f:
         pickle.dump(ticker, f)

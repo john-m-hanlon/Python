@@ -45,7 +45,7 @@ def save_sp500_tickers():
         tickers.append(ticker)
 
     with open('{}sp500tickers.pickle'.format(ploc), 'wb') as f:
-        pickle.dump(ticker, f)
+        pickle.dump(tickers, f)
 
     print(tickers)
 
