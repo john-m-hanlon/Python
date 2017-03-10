@@ -15,6 +15,7 @@ TV_Method = 'TM'
 Gordon_Growth_Rate = 0.02
 Exit_Multiple = 5.5
 beta = 1
+periods = 5
 
 # Step 1: Calculate and project unlevered free cash flow
 
@@ -37,12 +38,21 @@ def calc_unlevered_free_cash_flow():
     '''
 
     EBIT = 15
-    Taxes = EBIT * Tax_Rate
-    CAPEX = 5
-    NWC = 2
+    CAPEX = -5
     DA = 5
+    total_current_assets = 5
+    cash = 3
+    total_current_liabilities = 3
+    short_term_debt = 1
 
-    ufcf = EBIT - Taxes - CAPEX - NWC + DA
+    Taxes = EBIT * Tax_Rate
+
+    current_assets = total_current_assets - cash
+    current_liabilities = total_current_liabilities - short_term_debt
+
+    NWC = current_assets - current_liabilities
+
+    ufcf = EBIT - Taxes - -CAPEX - NWC + DA
     return ufcf
 
 
@@ -59,7 +69,7 @@ def project_ufcf(start_year, growth_rate):
     start_year : int
         The first year in which we are analyzing the data
 
-    growth_rate : int
+    growth_rate : float
         The growth rate by which we are going to assume the company will grow
         EBIT or Revenue on an annual basis
 
@@ -130,15 +140,11 @@ def calc_WACC():
 
     Parameters
     ==========
-    beta : float
-        levered beta, which is the measure of the volatility or covariance of
-        the return on a security compared to the market as a whole,
-        i.e., systematic risk
-
+    N/A : Takes no parameters
 
     Returns
     =======
-    wacc : int
+    wacc : float
         The required rate of return or weighed average cost of capital for the
         company
 
@@ -174,9 +180,11 @@ def calc_terminal_value(tv_method, gordon_growth_rate, beta):
     Parameters
     ==========
 
-    x : str
+    tv_method : str
         Either GGM or TM should be entered to indicate if we are going to use
         the Gordon Growth Model or Terminal Multiple method
+
+    gordon_growth_rate : 
 
     Returns
     =======

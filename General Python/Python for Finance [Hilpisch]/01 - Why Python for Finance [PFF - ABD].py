@@ -1,4 +1,4 @@
-from numpy import *
+01 from numpy import *
 '''
 Monte Carlo valuation of European call option
 in Black-Scholes-Merton model
