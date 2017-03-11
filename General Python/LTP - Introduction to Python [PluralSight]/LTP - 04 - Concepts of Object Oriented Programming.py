@@ -1,5 +1,5 @@
 #
-# A simple program to identify grocery items that user wants to purchase
+# A simple program to identify which people are in a classroom and greet them
 # LTP - 04 - Concepts of Object Oriented Programming.py
 #
 
