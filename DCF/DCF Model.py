@@ -21,22 +21,18 @@ periods = 5
 
 
 def calc_unlevered_free_cash_flow():
-    '''
-    Calculate the unlevered free cash flows
+    ''' Calculate the unlevered free cash flows
 
     Parameters
     ==========
-
     N/A : Takes no parameters at the moment
 
     Returns
     =======
-
-    ufcf : int
+    ufcf : float
         Unlevered free cash flow for the company
 
     '''
-
     EBIT = 15
     CAPEX = -5
     DA = 5
@@ -57,15 +53,13 @@ def calc_unlevered_free_cash_flow():
 
 
 def project_ufcf(start_year, growth_rate):
-    '''
-    Project the unlevered free cash flows to infinity since we can assume that
-    the company is a going concern. However, since we cannot project the cash
-    flows to infinty, we project free cash flows for a period of five or 10
-    years, or until the company reaches a steady state of growth
+    ''' Project the unlevered free cash flows to infinity since we can assume
+    that the company is a going concern. However, since we cannot project the
+    cash flows to infinty, we project free cash flows for a period of five or
+    10 years, or until the company reaches a steady state of growth
 
     Parameters
     ==========
-
     start_year : int
         The first year in which we are analyzing the data
 
@@ -75,7 +69,6 @@ def project_ufcf(start_year, growth_rate):
 
     Returns
     =======
-
     df : Data frame
         Data Frame with the project unlevered free cash flows
     '''
@@ -107,8 +100,7 @@ def project_ufcf(start_year, growth_rate):
 
 
 def calc_CAPM(beta):
-    '''
-    The cost of equity is calculated using the capital asset pricing model
+    ''' The cost of equity is calculated using the capital asset pricing model
     (CAPM)
 
     Parameters
@@ -120,7 +112,6 @@ def calc_CAPM(beta):
 
     Returns
     =======
-
     capm : int
         the cost of equity
     '''
@@ -133,10 +124,9 @@ def calc_CAPM(beta):
 
 
 def calc_WACC():
-    '''
-    Weighted average cost of capital or (WACC) is a weighted average after-tax
-    cost or required rate of return for different sources of capital for a
-    company, i.e., debt, preferred, and equity
+    ''' Weighted average cost of capital or (WACC) is a weighted average
+    after-tax cost or required rate of return for different sources of capital
+    for a company, i.e., debt, preferred, and equity
 
     Parameters
     ==========
@@ -173,22 +163,26 @@ def calc_WACC():
 
 
 def calc_terminal_value(tv_method, gordon_growth_rate, beta):
-    '''
-    There are two methods for calculating terminal value, namely the Gordon
-    Growth model or the exit multiple method
+    ''' There are two methods for calculating terminal value, namely the
+    Gordon Growth model or the exit multiple method
 
     Parameters
     ==========
-
     tv_method : str
         Either GGM or TM should be entered to indicate if we are going to use
         the Gordon Growth Model or Terminal Multiple method
 
-    gordon_growth_rate : 
+    gordon_growth_rate : float
+        Growth by which companies will grow in perpitutiy
+
+    beta : float
+        levered beta, which is the measure of the volatility or covariance of
+        the return on a security compared to the market as a whole,
+        i.e., systematic risk
+
 
     Returns
     =======
-
     terminal_value : data frame
         Returns the terminal vaule in a data frame cell
 
@@ -220,18 +214,30 @@ def calc_terminal_value(tv_method, gordon_growth_rate, beta):
 
 
 def calc_present_value(start_year, tv_method, beta, growth_rate):
-    '''
-    Calculate the present value of the projected free cash flows and the
+    ''' Calculate the present value of the projected free cash flows and the
     terminal value at the appropriate discount rate, i.e., WACC. Add the
     present value of all the cash flows to get the enterprise value of the
     company
 
     Parameters
     ==========
+    start_year : int
+        the year in which the evaluation originates
+
+    tv_method : str
+        Either GGM or TM should be entered to indicate if we are going to use
+        the Gordon Growth Model or Terminal Multiple method
+
+    beta : float
+        levered beta, which is the measure of the volatility or covariance of
+        the return on a security compared to the market as a whole,
+        i.e., systematic risk
+
+    gordon_growth_rate : float
+        Growth by which companies will grow in perpitutiy
 
     Returns
     =======
-
     enterprise value : int
         The present value of the company's cash flows
 
